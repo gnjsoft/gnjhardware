@@ -1,0 +1,6 @@
+{
+  "name": "TechCore Electronics",
+  "description": "High-performance modular electronics store focusing on premium laptops, desktops, and monitors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
