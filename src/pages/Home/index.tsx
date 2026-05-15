@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PRODUCTS } from '../../data/products';
 import { BestSellers } from '../../components/home/BestSellers';
 import { AllProducts } from '../../components/home/AllProducts';
+import { TrustSection } from '../../components/home/TrustSection';
 
 const HERO_SLIDES = [
   {
@@ -192,6 +193,7 @@ export const Home: React.FC = () => {
 
       <BestSellers />
       <AllProducts />
+      <TrustSection />
     </div>
   );
 };

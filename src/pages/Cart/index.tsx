@@ -1,11 +1,18 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
-import { ShoppingBag, ArrowRight, Trash2, Minus, Plus, Zap } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Trash2, Minus, Plus, Zap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { RecommendedProduct } from '../../components/cart/RecommendedProduct';
+import { PRODUCTS } from '../../data/products';
 
 export const Cart: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, subtotal } = useCart();
+
+  // Get some products to recommend
+  const recommendations = PRODUCTS
+    .filter(p => !cart.find(item => item.id === p.id))
+    .slice(0, 3);
 
   if (cart.length === 0) {
     return (
@@ -24,6 +31,30 @@ export const Cart: React.FC = () => {
            >
              Initialize Acquisition
            </Link>
+
+           {/* Recommendations for empty cart */}
+           <div className="mt-40 pt-20 border-t border-white/5 space-y-16 text-left">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                 <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-accent mb-2">
+                       <Sparkles size={18} className="fill-accent" />
+                       <span className="text-[10px] font-black uppercase tracking-[0.4em]">Engineered Starts</span>
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
+                       Featured <span className="text-slate-800">Hardware.</span>
+                    </h2>
+                 </div>
+                 <p className="text-slate-500 text-sm font-medium max-w-xs md:text-right">
+                    Start your setup with our most capable professional instruments. Guaranteed performance.
+                 </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10">
+                 {recommendations.map((product) => (
+                   <RecommendedProduct key={product.id} product={product} />
+                 ))}
+              </div>
+           </div>
         </div>
       </div>
     );
@@ -126,6 +157,30 @@ export const Cart: React.FC = () => {
                 </div>
              </div>
           </div>
+        </div>
+
+        {/* Recommendations Section */}
+        <div className="mt-40 space-y-16">
+           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+              <div className="space-y-4">
+                 <div className="flex items-center gap-3 text-accent mb-2">
+                    <Sparkles size={18} className="fill-accent" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">Recommended Upgrades</span>
+                 </div>
+                 <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
+                    Complete your <span className="text-slate-800">Setup.</span>
+                 </h2>
+              </div>
+              <p className="text-slate-500 text-sm font-medium max-w-xs md:text-right">
+                 Engineered specifically to complement your batch selection. Professional grade hardware.
+              </p>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+              {recommendations.map((product) => (
+                <RecommendedProduct key={product.id} product={product} />
+              ))}
+           </div>
         </div>
       </div>
     </div>
