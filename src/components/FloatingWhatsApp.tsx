@@ -19,7 +19,7 @@ export default function FloatingWhatsApp() {
     const textQuery = encodeURIComponent(
       "Hello GNJ Hardware Services, I am visiting your business website and would like a quote/support on office IT hardware services."
     );
-    window.open(`https://wa.me/919876543210?text=${textQuery}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/919099126937?text=${textQuery}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
