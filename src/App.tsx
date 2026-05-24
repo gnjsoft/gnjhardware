@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import HomeView from './components/HomeView';
 import AboutView from './components/AboutView';
@@ -14,10 +14,56 @@ import ContactView from './components/ContactView';
 import Footer from './components/Footer';
 import DiagnosticWizard from './components/DiagnosticWizard';
 
+const PAGE_MAPPING: Record<string, string> = {
+  'home': 'index.html',
+  'about': 'about.html',
+  'why-choose-us': 'why.html',
+  'services': 'services.html',
+  'review': 'reviews.html',
+  'contact': 'contact.html',
+};
+
+const REVERSE_PAGE_MAPPING: Record<string, string> = {
+  'index.html': 'home',
+  'about.html': 'about',
+  'why.html': 'why-choose-us',
+  'services.html': 'services',
+  'reviews.html': 'review',
+  'contact.html': 'contact',
+};
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
   const [isDiagnosticOpen, setIsDiagnosticOpen] = useState(false);
   const [diagnosticCategory, setDiagnosticCategory] = useState<string | undefined>(undefined);
+
+  // Synchronize hash with current page state for real multi-page feel (.html files)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const cleanHash = window.location.hash.toLowerCase().replace(/^#\/?/, '');
+      const matchedPage = REVERSE_PAGE_MAPPING[cleanHash];
+      if (cleanHash && matchedPage) {
+        setCurrentPage(matchedPage);
+      } else if (!cleanHash) {
+        window.history.replaceState(null, '', '#/index.html');
+        setCurrentPage('home');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handlePageChange = (pageId: string) => {
+    const hashFile = PAGE_MAPPING[pageId] || 'index.html';
+    window.location.hash = `/${hashFile}`;
+    setCurrentPage(pageId);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   // Trigger diagnostic popup
   const handleOpenDiagnostic = (category?: string) => {
@@ -33,19 +79,19 @@ export default function App() {
   const renderPageView = () => {
     switch (currentPage) {
       case 'home':
-        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={setCurrentPage} />;
+        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={handlePageChange} />;
       case 'about':
         return <AboutView />;
       case 'why-choose-us':
         return <WhyChooseUsView />;
       case 'services':
-        return <ServicesView onOpenDiagnostic={handleOpenDiagnostic} setCurrentPage={setCurrentPage} />;
+        return <ServicesView onOpenDiagnostic={handleOpenDiagnostic} setCurrentPage={handlePageChange} />;
       case 'review':
         return <ReviewView />;
       case 'contact':
         return <ContactView />;
       default:
-        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={setCurrentPage} />;
+        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={handlePageChange} />;
     }
   };
 
@@ -54,7 +100,7 @@ export default function App() {
       {/* Sticky Top Header Navigation */}
       <Header
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
+        setCurrentPage={handlePageChange}
         onOpenDiagnostic={() => handleOpenDiagnostic()}
       />
 
@@ -64,7 +110,7 @@ export default function App() {
       </main>
 
       {/* Consolidated Footer */}
-      <Footer setCurrentPage={setCurrentPage} />
+      <Footer setCurrentPage={handlePageChange} />
 
       {/* Interactive Service Diagnostic & Estimate Calculator Modal */}
       <DiagnosticWizard

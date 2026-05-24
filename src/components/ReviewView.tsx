@@ -26,7 +26,7 @@ export default function ReviewView() {
       name: 'Preeti Nair',
       role: 'Head of Operations Desk',
       company: 'Bombay Logistics Hub',
-      text: 'Their structured cabling layout completely transformed our server rack room. Clean Cat6A runs, clear labeling, and neatly dressed patch panels solved all physical Wi-Fi signal issues. True professional class hardware specialists.',
+      text: 'Their structured cabling layout completely transformed our server rack room. Clean Cat6A runs, clear labeling, and neatly dressed patch panels solved all physical Wi-Fi signal issues. True professional class hardware specialists with fast service response.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&q=80'
     },
@@ -38,6 +38,24 @@ export default function ReviewView() {
       text: 'Flashed screen issues and damaged hinges inside our primary edit suite laptops were delaying our daily editorial releases. Metros team picked up forty systems, did full physical LCD/hinge recovery, and dispatched them back in pristine order within 48 hours.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&q=80'
+    },
+    {
+      id: 'rev-5',
+      name: 'Vikas Shah',
+      role: 'IT Procurement Head',
+      company: 'Metro Health Labs',
+      text: 'Their professional engineers diagnosed complex power IC degradation on 14 lab workstations. Instead of expensive motherboard replacements, they reflowed resistors safely at micro-benches on site. Exceptional expertise.',
+      rating: 5,
+      avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&q=80'
+    },
+    {
+      id: 'rev-6',
+      name: 'Anjali Sharma',
+      role: 'Director of Operations',
+      company: 'Sovereign Fintech Group',
+      text: 'Metro Hardware Services reduced our physical workstation downtime down to virtually zero. Their fast service response and reliable monthly AMC visits saved us countess crucial workspace hours.',
+      rating: 5,
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&q=80'
     }
   ];
 
