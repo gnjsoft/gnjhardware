@@ -13,6 +13,8 @@ import ReviewView from './components/ReviewView';
 import ContactView from './components/ContactView';
 import Footer from './components/Footer';
 import DiagnosticWizard from './components/DiagnosticWizard';
+import OfferPopup from './components/OfferPopup';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const PAGE_MAPPING: Record<string, string> = {
   'home': 'index.html',
@@ -118,6 +120,12 @@ export default function App() {
         onClose={handleCloseDiagnostic}
         defaultCategory={diagnosticCategory}
       />
+
+      {/* Special Offer Promotional Center Popup (Delayed (3s), responsive) */}
+      <OfferPopup />
+
+      {/* Corporate Floating Support WhatsApp Communication Hotkey */}
+      <FloatingWhatsApp />
     </div>
   );
 }
