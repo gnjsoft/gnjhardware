@@ -58,15 +58,18 @@ export default function Header({ currentPage, setCurrentPage, onOpenDiagnostic }
             <a
               href="#home"
               id="header-brand-logo"
-              className="flex items-center gap-2.5 group cursor-pointer"
+              className="flex items-center gap-3 group cursor-pointer"
               onClick={(e) => handleNavLinkClick(e, 'home')}
             >
-              <div className="p-2.5 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg group-hover:opacity-90 transition-opacity shadow-md shadow-purple-200">
-                <Cpu className="h-6 w-6" />
-              </div>
+              <img
+                src="https://gnjsoft.com/images/logo.png"
+                alt="GNJ Logo"
+                className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-350"
+                referrerPolicy="no-referrer"
+              />
               <div className="text-left">
-                <span className="font-display font-extrabold text-xl tracking-tight text-slate-900 block leading-none">
-                  METRO
+                <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 block leading-none uppercase">
+                  GNJ
                 </span>
                 <span className="text-3xs font-mono tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 block uppercase font-bold mt-1">
                   Hardware Services

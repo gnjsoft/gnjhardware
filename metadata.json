@@ -1,5 +1,5 @@
 {
-  "name": "Metro Hardware Services",
+  "name": "GNJ Hardware Services",
   "description": "Professional hardware repair, server maintenance, network troubleshooting, printer services, and AMC contracts for offices and corporate clients.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

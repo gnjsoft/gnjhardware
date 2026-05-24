@@ -34,15 +34,18 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <a
               href="#home"
               onClick={(e) => handleNavLinkClick(e, 'home')}
-              className="flex items-center gap-2.5 opacity-90 hover:opacity-100 transition-opacity"
+              className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity"
               id="footer-brand"
             >
-              <div className="p-2.5 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg">
-                <Cpu className="h-5.5 w-5.5" />
-              </div>
+              <img
+                src="https://gnjsoft.com/images/logo.png"
+                alt="GNJ Logo"
+                className="h-8 sm:h-10 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
               <div>
-                <span className="font-display font-bold text-lg tracking-tight text-white block leading-none">
-                  METRO
+                <span className="font-display font-bold text-lg tracking-tight text-white block leading-none uppercase">
+                  GNJ
                 </span>
                 <span className="text-3xs font-mono tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 block uppercase font-semibold mt-0.5">
                   Hardware Services
@@ -132,7 +135,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           {/* Col 3 Contacts details */}
           <div className="lg:col-span-4 text-left space-y-4">
             <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-slate-200">
-              Metro India SLA Helpdesk
+              GNJ India SLA Helpdesk
             </h4>
             
             <div className="space-y-3.5 text-xs text-slate-400">
@@ -142,7 +145,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-purple-400" />
-                <span>mumbai.dispatch@metrohardware.in</span>
+                <span>mumbai.dispatch@gnjhardware.in</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
@@ -185,7 +188,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
         {/* Footer Bottom copyright area with back to top button */}
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-5 text-2xs text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} Metro Hardware Services, Inc. All rights reserved. 
+            &copy; 2026 GNJ Hardware Services. All rights reserved. 
             <span className="block sm:inline sm:ml-2 text-slate-600">All registered trademark assets belong to their respective corporate entities.</span>
           </div>
 

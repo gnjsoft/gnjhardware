@@ -104,7 +104,7 @@ export default function ContactView() {
 
                   {/* Mail */}
                   <a
-                    href="mailto:mumbai.dispatch@metrohardware.in"
+                    href="mailto:mumbai.dispatch@gnjhardware.in"
                     className="flex items-start gap-4 group cursor-pointer"
                   >
                     <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white flex items-center justify-center transition-colors flex-shrink-0">
@@ -112,7 +112,7 @@ export default function ContactView() {
                     </div>
                     <div>
                       <span className="block text-3xs font-mono font-bold uppercase text-slate-400 tracking-widest">Business Proposals</span>
-                      <strong className="block text-sm text-slate-800 mt-0.5 group-hover:text-purple-600">mumbai.dispatch@metrohardware.in</strong>
+                      <strong className="block text-sm text-slate-800 mt-0.5 group-hover:text-purple-600">mumbai.dispatch@gnjhardware.in</strong>
                       <span className="block text-3xs text-slate-500">SLA audits & contract evaluations</span>
                     </div>
                   </a>
@@ -172,7 +172,7 @@ export default function ContactView() {
                     title="Naman BKC Centre"
                   >
                     <MapPin className="w-4 h-4 mb-0.5 text-pink-300" />
-                    <span className="font-mono text-5xs tracking-widest leading-none font-bold">METRO HQ</span>
+                    <span className="font-mono text-5xs tracking-widest leading-none font-bold">GNJ HQ</span>
                   </div>
 
                   {/* Bottom Map Status */}

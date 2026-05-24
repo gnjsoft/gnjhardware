@@ -8,7 +8,7 @@ export default function ReviewView() {
       name: 'Amit Singhal',
       role: 'Chief Technology Director',
       company: 'Alpha Wealth Systems',
-      text: 'Our server array suffered a sudden RAID layout failure. Metros senior engineers arrived at our Mumbai data room in under 90 minutes, physically swapped the hot-plug drive, and restored integrity with zero information loss. Reduced downtime is critical in high-frequency trading.',
+      text: 'Our server array suffered a sudden RAID layout failure. GNJ senior engineers arrived at our Mumbai data room in under 90 minutes, physically swapped the hot-plug drive, and restored integrity with zero information loss. Reduced downtime is critical in high-frequency trading.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80'
     },
@@ -35,7 +35,7 @@ export default function ReviewView() {
       name: 'Rajesh Kulkarni',
       role: 'Infrastructure & HR Director',
       company: 'Apex Media Broadcasts',
-      text: 'Flashed screen issues and damaged hinges inside our primary edit suite laptops were delaying our daily editorial releases. Metros team picked up forty systems, did full physical LCD/hinge recovery, and dispatched them back in pristine order within 48 hours.',
+      text: 'Flashed screen issues and damaged hinges inside our primary edit suite laptops were delaying our daily editorial releases. GNJ team picked up forty systems, did full physical LCD/hinge recovery, and dispatched them back in pristine order within 48 hours.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&q=80'
     },
@@ -43,7 +43,7 @@ export default function ReviewView() {
       id: 'rev-5',
       name: 'Vikas Shah',
       role: 'IT Procurement Head',
-      company: 'Metro Health Labs',
+      company: 'GNJ Health Labs',
       text: 'Their professional engineers diagnosed complex power IC degradation on 14 lab workstations. Instead of expensive motherboard replacements, they reflowed resistors safely at micro-benches on site. Exceptional expertise.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&q=80'
@@ -53,7 +53,7 @@ export default function ReviewView() {
       name: 'Anjali Sharma',
       role: 'Director of Operations',
       company: 'Sovereign Fintech Group',
-      text: 'Metro Hardware Services reduced our physical workstation downtime down to virtually zero. Their fast service response and reliable monthly AMC visits saved us countess crucial workspace hours.',
+      text: 'GNJ Hardware Services reduced our physical workstation downtime down to virtually zero. Their fast service response and reliable monthly AMC visits saved us countess crucial workspace hours.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&q=80'
     }
@@ -99,7 +99,7 @@ export default function ReviewView() {
               </div>
 
               <blockquote className="text-lg md:text-2xl font-display font-bold leading-relaxed">
-                "Signing a flat-rate AMC agreement with Metro was the single best operational decision we made this fiscal year. They upgraded 55 of our reception laptops to durable solid-state drives and completed clean system micro-soldering on our primary firewall arrays, extending workstation lifespans by years."
+                "Signing a flat-rate AMC agreement with GNJ was the single best operational decision we made this fiscal year. They upgraded 55 of our reception laptops to durable solid-state drives and completed clean system micro-soldering on our primary firewall arrays, extending workstation lifespans by years."
               </blockquote>
 
               {/* Reviewer Details */}
