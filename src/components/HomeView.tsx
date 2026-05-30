@@ -30,94 +30,80 @@ export default function HomeView({ onOpenDiagnostic, setCurrentPage }: HomeViewP
   ];
 
   return (
-    <div className="pt-24 select-none">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-white">
-        {/* Soft decorative background glow circles */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-100/30 to-pink-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+    <div className="select-none">
+      {/* Immersive Futuristic Dark Wave Hero Section (Inspired by Reference Image Style) */}
+      <section className="relative min-h-[92vh] flex flex-col justify-between items-center overflow-hidden bg-slate-950 text-white select-none">
+        {/* Background 3D Wave Abstract Overlay matching the reference layout */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 z-0 scale-105 pointer-events-none"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1920')" 
+          }}
+        />
+        
+        {/* Deep mesh radial-gradients for that premium futuristic neon visual gloss atmosphere */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-slate-950/85 to-slate-950 z-0 pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse duration-[8000ms]" />
+        <div className="absolute bottom-10 left-1/4 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-36 sm:pt-44 lg:pt-48 pb-12 flex-grow flex flex-col justify-center text-center">
+          <div className="space-y-8 animate-fade-in">
+            {/* Header Micro-Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-pink-300 text-2xs font-mono font-bold tracking-widest uppercase shadow-inner">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Enterprise IT Service Partner
+            </div>
             
-            {/* Left Texts Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-100 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase">
-                <ShieldCheck className="w-3.5 h-3.5 text-pink-500" /> Professional IT Hardware Partner
-              </div>
-              
-              <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight leading-[1.1]">
-                Reliable <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 font-black">Hardware Services</span> for Your Business
-              </h1>
+            {/* Massive Display Title resembling the exact reference image */}
+            <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.12] max-w-5xl mx-auto drop-shadow-xl">
+              GNJ Hardware Services – Your IT, Network & Server Maintenance Partner In Mumbai
+            </h1>
 
-              <p className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
-                Fast, secure and affordable IT hardware support. We specialize in laptop repair fleets, heavy-duty server arrays, structured cabling, and enterprise AMC agreements.
-              </p>
+            {/* Explanatory subtitle */}
+            <p className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-normal leading-relaxed drop-shadow-md">
+              We provide expert IT maintenance and flexible SLA contracts to keep your business running at peak performance. Fast, secure, & responsive on-site hardware dispatch.
+            </p>
 
-              {/* Action buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                <button
-                  type="button"
-                  id="hero-get-quote"
-                  onClick={onOpenDiagnostic}
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-95 text-white font-bold text-base py-3.5 px-8 rounded-xl shadow-lg shadow-purple-100 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
-                >
-                  Get Quote
-                </button>
-                <button
-                  type="button"
-                  id="hero-contact-now"
-                  onClick={() => setCurrentPage('contact')}
-                  className="flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 hover:border-slate-300 font-bold text-base py-3.5 px-8 rounded-xl transition-all shadow-sm cursor-pointer"
-                >
-                  Contact Now
-                </button>
-              </div>
+            {/* Dynamic Buttons pair conforming to reference image style */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4">
+              {/* Button 1: Get A Free IT Consultation */}
+              <button
+                type="button"
+                id="hero-get-quote"
+                onClick={onOpenDiagnostic}
+                className="w-full sm:w-auto flex items-center justify-between gap-4 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-650 text-white font-bold text-sm sm:text-base py-3.5 px-3.5 pl-8 rounded-full shadow-2xl shadow-purple-500/25 active:scale-98 transition-all cursor-pointer group"
+              >
+                <span>Get A Free IT Consultation</span>
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-950/40 flex items-center justify-center text-white flex-shrink-0 group-hover:translate-x-0.5 transition-transform duration-200">
+                  <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+                </span>
+              </button>
+
+              {/* Button 2: Explore Our Services */}
+              <button
+                type="button"
+                id="hero-explore-services"
+                onClick={() => setCurrentPage('services')}
+                className="w-full sm:w-auto flex items-center justify-between gap-4 bg-white/10 hover:bg-white/15 text-white font-bold text-sm sm:text-base py-3.5 px-3.5 pl-8 rounded-full border border-white/15 backdrop-blur-sm active:scale-98 transition-all cursor-pointer group"
+              >
+                <span>Explore Our Services</span>
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center text-slate-950 flex-shrink-0 group-hover:translate-x-0.5 transition-transform duration-200">
+                  <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-slate-950" />
+                </span>
+              </button>
             </div>
-
-            {/* Right Static Highlight Dashboard */}
-            <div className="lg:col-span-5 w-full">
-              <div className="relative bg-slate-50 rounded-3xl border border-purple-50 p-6 md:p-8 shadow-xl space-y-6">
-                <div className="flex items-center justify-between border-b border-purple-100 pb-4">
-                  <div>
-                    <h3 className="font-display font-bold text-lg text-slate-900">Mumbai Operations</h3>
-                    <p className="text-2xs font-mono text-purple-600 uppercase tracking-widest font-bold mt-1">Live Helpdesk Dispatch</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold font-mono">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Active SLA
-                  </span>
-                </div>
-
-                <div className="space-y-4 text-left">
-                  <div className="p-4 bg-white rounded-2xl border border-slate-100 shadow-xs">
-                    <span className="block text-4xs font-mono font-bold text-slate-400 uppercase tracking-widest">Average Service Dispatch</span>
-                    <h4 className="text-2xl font-black font-display text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 mt-1">Under 4 Hours</h4>
-                    <p className="text-xs text-slate-500 mt-1">Immediate local transit in Greater Mumbai network corridor.</p>
-                  </div>
-
-                  <div className="p-4 bg-white rounded-2xl border border-slate-100 shadow-xs">
-                    <span className="block text-4xs font-mono font-bold text-slate-400 uppercase tracking-widest">Worry-free AMC Standard</span>
-                    <h4 className="text-2xl font-black font-display text-slate-900 mt-1">Zero Downtime Pledge</h4>
-                    <p className="text-xs text-slate-500 mt-1">99.8% server & workstation reliability audit score.</p>
-                  </div>
-                </div>
-
-                {/* Instant interactive action inside badge */}
-                <div className="bg-gradient-to-br from-purple-600/10 to-pink-500/10 border border-purple-100 rounded-2xl p-5 text-center">
-                  <h4 className="font-bold text-purple-900 text-sm leading-tight">Need a quick cost estimation?</h4>
-                  <p className="text-xs text-slate-600 mt-1 mb-3">Check custom repairs with our Instant Troubleshooter.</p>
-                  <button
-                    type="button"
-                    onClick={onOpenDiagnostic}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-95 text-white font-bold text-xs py-2 px-4 rounded-xl transition-all shadow-md shadow-purple-200 cursor-pointer"
-                  >
-                    Calculate Cost Estimate
-                  </button>
-                </div>
-              </div>
-            </div>
-
           </div>
+        </div>
+
+        {/* Scroll Down interaction container matching image bottom center */}
+        <div className="relative z-10 pb-8 flex flex-col items-center gap-2 pointer-events-none select-none">
+          {/* Animated mouse layout */}
+          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2 opacity-60">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-bounce" />
+          </div>
+          <span className="font-mono text-[9px] text-slate-400 tracking-[0.25em] uppercase font-semibold">
+            scroll down
+          </span>
         </div>
       </section>
 

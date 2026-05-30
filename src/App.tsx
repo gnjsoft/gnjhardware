@@ -46,6 +46,20 @@ export default function App() {
       const matchedPage = REVERSE_PAGE_MAPPING[cleanHash];
       if (cleanHash && matchedPage) {
         setCurrentPage(matchedPage);
+        const element = document.getElementById(matchedPage);
+        if (element) {
+          setTimeout(() => {
+            const offset = 90;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
       } else if (!cleanHash) {
         window.history.replaceState(null, '', '#/index.html');
         setCurrentPage('home');
@@ -57,14 +71,48 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Monitor scrolling in real-time to active-highlight header items (Scroll Spy)
+  useEffect(() => {
+    const sections = ['home', 'about', 'why-choose-us', 'services', 'review', 'contact'];
+    
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 180; // offset for nav container height
+      
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setCurrentPage(sectionId);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScrollSpy);
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, []);
+
   const handlePageChange = (pageId: string) => {
     const hashFile = PAGE_MAPPING[pageId] || 'index.html';
     window.location.hash = `/${hashFile}`;
     setCurrentPage(pageId);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    
+    const element = document.getElementById(pageId);
+    if (element) {
+      const offset = 90;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   // Trigger diagnostic popup
@@ -78,25 +126,6 @@ export default function App() {
     setDiagnosticCategory(undefined);
   };
 
-  const renderPageView = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={handlePageChange} />;
-      case 'about':
-        return <AboutView />;
-      case 'why-choose-us':
-        return <WhyChooseUsView />;
-      case 'services':
-        return <ServicesView onOpenDiagnostic={handleOpenDiagnostic} setCurrentPage={handlePageChange} />;
-      case 'review':
-        return <ReviewView />;
-      case 'contact':
-        return <ContactView />;
-      default:
-        return <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={handlePageChange} />;
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white antialiased" id="enterprise-hardware-app">
       {/* Sticky Top Header Navigation */}
@@ -106,9 +135,26 @@ export default function App() {
         onOpenDiagnostic={() => handleOpenDiagnostic()}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections rendered consecutive for landing page optimization */}
       <main className="flex-grow">
-        {renderPageView()}
+        <div id="home">
+          <HomeView onOpenDiagnostic={() => handleOpenDiagnostic()} setCurrentPage={handlePageChange} />
+        </div>
+        <div id="about" className="scroll-mt-24 border-t border-slate-50">
+          <AboutView />
+        </div>
+        <div id="why-choose-us" className="scroll-mt-24 border-t border-slate-50">
+          <WhyChooseUsView />
+        </div>
+        <div id="services" className="scroll-mt-24 border-t border-slate-50">
+          <ServicesView onOpenDiagnostic={handleOpenDiagnostic} setCurrentPage={handlePageChange} />
+        </div>
+        <div id="review" className="scroll-mt-24 border-t border-slate-50">
+          <ReviewView />
+        </div>
+        <div id="contact" className="scroll-mt-24 border-t border-slate-50">
+          <ContactView />
+        </div>
       </main>
 
       {/* Consolidated Footer */}

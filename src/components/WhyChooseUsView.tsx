@@ -9,12 +9,12 @@ export default function WhyChooseUsView() {
       icon: <Zap className="w-6 h-6 text-purple-600" />
     },
     {
-      title: 'Certified Technicians',
+      title: 'Certified Engineers',
       description: 'Our workbench team holds dual industry certifications in leading platforms (Dell, Lenovo, Hewlett-Packard, Cisco) and active CompTIA A+ and IEEE hardware credentials.',
       icon: <ShieldCheck className="w-6 h-6 text-pink-500" />
     },
     {
-      title: 'Affordable AMC Plans',
+      title: 'Affordable Pricing',
       description: 'Get predictable IT cost structures. We structure clear flat-rate annual maintenance service tiers that align perfectly to your corporate budget limitations.',
       icon: <FileText className="w-6 h-6 text-violet-500" />
     },
@@ -31,10 +31,10 @@ export default function WhyChooseUsView() {
   ];
 
   const stats = [
-    { value: '500+', label: 'Corporate Clients', icon: <Users className="w-5 h-5 text-purple-600" /> },
-    { value: '14+', label: 'Years Experience', icon: <Calendar className="w-5 h-5 text-pink-500" /> },
-    { value: '45,000+', label: 'Devices Repaired', icon: <Award className="w-5 h-5 text-violet-500" /> },
-    { value: '4.9/5', label: 'Average SLA Rating', icon: <Star className="w-5 h-5 text-amber-500 fill-amber-450" /> }
+    { value: '500+', label: 'Clients Served', icon: <Users className="w-5 h-5 text-purple-600" /> },
+    { value: '10+', label: 'Years Experience', icon: <Calendar className="w-5 h-5 text-pink-500" /> },
+    { value: '24/7', label: 'Critical Support', icon: <Award className="w-5 h-5 text-violet-500" /> },
+    { value: '4.9/5', label: 'Average Rating', icon: <Star className="w-5 h-5 text-amber-500 fill-amber-450" /> }
   ];
 
   return (
